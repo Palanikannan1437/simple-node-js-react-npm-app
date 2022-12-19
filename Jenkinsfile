@@ -9,7 +9,7 @@ pipline {
             steps {
                 echo "building application"
                 sh "npm install"
-                sh "npm build"
+                sh "npm run build"
             }
         }
 
@@ -17,15 +17,15 @@ pipline {
 
             steps {
                 echo "testing application"
-                sh "npm test"
+                sh "npm run test"
             }
 
         }
 
-        stage("build") {
+        stage("deploy") {
 
             steps {
-                echo "building application"
+                echo "deploying application"
             }
 
         }
