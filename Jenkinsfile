@@ -1,11 +1,13 @@
 pipline {
 
-    agent any
-
+    agent {
+        docker {
+            image 'node:lts-bullseye-slim' 
+            args '-p 3000:3000' 
+        }
+    }
     stages {
-
         stages("build") {
-
             steps {
                 echo "building application"
                 sh "npm install"
